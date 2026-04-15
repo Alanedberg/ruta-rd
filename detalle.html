@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Detalle de Ruta — RutaRD</title>
+  <meta name="description" content="Información completa de la ruta seleccionada: recorrido, precio, horario, comentarios y valoración." />
+
+  <link rel="stylesheet" href="libs/bootstrap/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="libs/bootstrap/css/bootstrap-icons.css" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+<!-- Loader -->
+<div id="page-loader">
+  <div class="loader-logo">Ruta<span>RD</span></div>
+  <div class="loader-spinner"></div>
+</div>
+
+<!-- ── Navbar ─────────────────────────────────────────── -->
+<nav class="navbar navbar-expand-lg" id="main-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">
+      <i class="bi bi-bus-front-fill brand-icon"></i>
+      Ruta<span class="brand-accent">RD</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Alternar menú">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-auto gap-1">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html"><i class="bi bi-house-fill"></i> Inicio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="rutas.html"><i class="bi bi-map-fill"></i> Rutas</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="sobre.html"><i class="bi bi-info-circle-fill"></i> Sobre el Proyecto</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- ── Hero Detalle ───────────────────────────────────── -->
+<section class="detalle-hero">
+  <div class="container">
+    <nav aria-label="breadcrumb" class="mb-3">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="index.html"><i class="bi bi-house-fill"></i> Inicio</a></li>
+        <li class="breadcrumb-item"><a href="rutas.html">Rutas</a></li>
+        <li class="breadcrumb-item active" id="detalle-breadcrumb">Cargando...</li>
+      </ol>
+    </nav>
+
+    <div class="d-flex align-items-center gap-2 mb-2" id="detalle-badge-wrap">
+      <span class="detalle-tipo-badge" id="detalle-badge-tipo">
+        <i id="detalle-tipo-icon" class="bi"></i>
+        <span id="detalle-tipo-label">...</span>
+      </span>
+    </div>
+
+    <h1 class="detalle-title" id="detalle-titulo">Cargando ruta...</h1>
+
+    <div class="d-flex align-items-center gap-3 flex-wrap mt-2">
+      <div class="stars-inline" id="detalle-hero-stars" style="font-size:1rem;"></div>
+      <a href="rutas.html" class="d-flex align-items-center gap-1" style="color:rgba(255,255,255,.7);text-decoration:none;font-size:.87rem;transition:.2s;" onmouseover="this.style.color='#FFD166'" onmouseout="this.style.color='rgba(255,255,255,.7)'">
+        <i class="bi bi-arrow-left-short"></i> Volver a rutas
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ── Contenido principal ────────────────────────────── -->
+<section class="py-5" style="background:var(--bg-light);">
+  <div class="container">
+    <div class="row g-4">
+
+      <!-- Columna izquierda: info + recorrido -->
+      <div class="col-lg-7">
+
+        <!-- Info rápida -->
+        <div class="info-card mb-4">
+          <h5><i class="bi bi-info-circle-fill"></i> Información de la Ruta</h5>
+          <div class="info-item">
+            <i class="bi bi-cash-coin"></i>
+            <div>
+              <div class="info-label">Precio estimado</div>
+              <div class="info-value" id="info-precio">—</div>
+            </div>
+          </div>
+          <div class="info-item">
+            <i class="bi bi-bus-front-fill"></i>
+            <div>
+              <div class="info-label">Tipo de transporte</div>
+              <div class="info-value" id="info-tipo">—</div>
+            </div>
+          </div>
+          <div class="info-item">
+            <i class="bi bi-hourglass-split"></i>
+            <div>
+              <div class="info-label">Duración estimada</div>
+              <div class="info-value" id="info-duracion">—</div>
+            </div>
+          </div>
+          <div class="info-item">
+            <i class="bi bi-clock-fill"></i>
+            <div>
+              <div class="info-label">Horario aproximado</div>
+              <div class="info-value" id="info-horario">—</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Recorrido -->
+        <div class="info-card mb-4">
+          <h5><i class="bi bi-signpost-2-fill"></i> Recorrido Paso a Paso</h5>
+          <div id="recorrido-list">
+            <!-- Generado por JS -->
+          </div>
+        </div>
+
+        <!-- Mapa embed (decorativo) -->
+        <div class="info-card mb-4">
+          <h5><i class="bi bi-map-fill"></i> Mapa de Referencia</h5>
+          <p style="color:var(--text-gray);font-size:.85rem;margin-bottom:1rem;">
+            <i class="bi bi-info-circle"></i> Vista aproximada de la zona. Utiliza esta referencia para orientarte.
+          </p>
+          <div style="border-radius:var(--radius);overflow:hidden;border:1px solid var(--border);">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d120956.11!2d-69.9312548!3d18.4860575!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2sdo!4v1700000000000!5m2!1ses!2sdo"
+              width="100%"
+              height="250"
+              style="border:0;display:block;"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              title="Mapa de referencia">
+            </iframe>
+          </div>
+        </div>
+
+        <!-- Reportes -->
+        <div class="info-card">
+          <h5><i class="bi bi-megaphone-fill" style="color:var(--accent);"></i> Reportes en Tiempo Real</h5>
+          <p style="color:var(--text-gray);font-size:.85rem;margin-bottom:1rem;">
+            ¿Tienes información útil sobre esta ruta? Compártela con la comunidad.
+          </p>
+          <div style="display:flex;flex-wrap:wrap;gap:0.5rem;">
+            <button class="btn-reporte pulse" data-tipo="tapon" id="btn-reporte-tapon"
+              style="display:flex;align-items:center;gap:.4rem;padding:.5rem 1rem;border-radius:8px;border:2px solid #FF6B35;background:transparent;color:#FF6B35;font-weight:600;font-size:.85rem;cursor:pointer;transition:.3s;">
+              <i class="bi bi-cone-striped"></i> Hay tapón
+            </button>
+            <button class="btn-reporte" data-tipo="desvio" id="btn-reporte-desvio"
+              style="display:flex;align-items:center;gap:.4rem;padding:.5rem 1rem;border-radius:8px;border:2px solid #FFB800;background:transparent;color:#F57F17;font-weight:600;font-size:.85rem;cursor:pointer;transition:.3s;">
+              <i class="bi bi-arrow-left-right"></i> Ruta desviada
+            </button>
+            <button class="btn-reporte" data-tipo="llena" id="btn-reporte-llena"
+              style="display:flex;align-items:center;gap:.4rem;padding:.5rem 1rem;border-radius:8px;border:2px solid var(--metro);background:transparent;color:var(--metro);font-weight:600;font-size:.85rem;cursor:pointer;transition:.3s;">
+              <i class="bi bi-people-fill"></i> Va llena
+            </button>
+            <button class="btn-reporte" data-tipo="retraso" id="btn-reporte-retraso"
+              style="display:flex;align-items:center;gap:.4rem;padding:.5rem 1rem;border-radius:8px;border:2px solid var(--text-light);background:transparent;color:var(--text-gray);font-weight:600;font-size:.85rem;cursor:pointer;transition:.3s;">
+              <i class="bi bi-clock-history"></i> Retraso
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Columna derecha: comentarios + valoración -->
+      <div class="col-lg-5">
+
+        <!-- Valoración -->
+        <div class="info-card mb-4">
+          <h5><i class="bi bi-star-fill" style="color:#FFB800;"></i> Califica esta Ruta</h5>
+          <p style="color:var(--text-gray);font-size:.85rem;margin-bottom:1rem;">
+            ¿Cómo estuvo tu experiencia? Tu opinión ayuda a la comunidad.
+          </p>
+          <div class="rating-stars" id="rating-stars" role="group" aria-label="Sistema de calificación">
+            <span class="star bi bi-star-fill" data-val="1" title="1 estrella" tabindex="0"></span>
+            <span class="star bi bi-star-fill" data-val="2" title="2 estrellas" tabindex="0"></span>
+            <span class="star bi bi-star-fill" data-val="3" title="3 estrellas" tabindex="0"></span>
+            <span class="star bi bi-star-fill" data-val="4" title="4 estrellas" tabindex="0"></span>
+            <span class="star bi bi-star-fill" data-val="5" title="5 estrellas" tabindex="0"></span>
+          </div>
+          <p class="rating-message" id="rating-message">Haz clic para calificar</p>
+        </div>
+
+        <!-- Comentarios -->
+        <div class="info-card">
+          <h5><i class="bi bi-chat-dots-fill"></i> Comentarios de Usuarios</h5>
+          <div class="d-flex flex-column gap-3 mt-2" id="comentarios-list">
+            <!-- Generado por JS -->
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Botones de navegación -->
+    <div class="d-flex justify-content-between mt-4 flex-wrap gap-2">
+      <a href="rutas.html" class="btn-filter" style="border-radius:8px;" id="btn-volver-rutas">
+        <i class="bi bi-arrow-left"></i> Volver a rutas
+      </a>
+      <a href="index.html" class="btn-ver" id="btn-ir-inicio">
+        <i class="bi bi-house-fill"></i> Ir al inicio
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ── Footer ─────────────────────────────────────────── -->
+<footer class="footer">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-lg-4">
+        <div class="footer-brand">Ruta<span>RD</span></div>
+        <p class="mt-2">Plataforma colaborativa de transporte público en República Dominicana.</p>
+      </div>
+      <div class="col-lg-2 col-6">
+        <h6>Navegación</h6>
+        <a href="index.html" class="footer-link"><i class="bi bi-house"></i> Inicio</a>
+        <a href="rutas.html" class="footer-link"><i class="bi bi-map"></i> Rutas</a>
+        <a href="sobre.html" class="footer-link"><i class="bi bi-info-circle"></i> Sobre el Proyecto</a>
+      </div>
+      <div class="col-lg-3 col-6">
+        <h6>Transporte</h6>
+        <a href="rutas.html" class="footer-link"><i class="bi bi-bus-front"></i> Guaguas</a>
+        <a href="rutas.html" class="footer-link"><i class="bi bi-train-front"></i> Metro</a>
+        <a href="rutas.html" class="footer-link"><i class="bi bi-car-front"></i> Carros Públicos</a>
+      </div>
+      <div class="col-lg-3">
+        <h6>Nota</h6>
+        <p style="font-size:.82rem;color:rgba(255,255,255,.5);">Datos colaborativos y aproximados. No son tarifas ni horarios oficiales.</p>
+      </div>
+    </div>
+    <hr class="footer-divider" />
+    <p class="footer-bottom">RutaRD © 2026 · Grupo I — Informática Gerencia · Todos los derechos reservados</p>
+  </div>
+</footer>
+
+<!-- Toast de reporte -->
+<div id="reporte-toast"
+  style="position:fixed;bottom:2rem;left:50%;transform:translateX(-50%);background:#1A1A2E;color:#fff;padding:.8rem 1.5rem;border-radius:50px;font-size:.9rem;font-weight:600;display:none;align-items:center;gap:.5rem;box-shadow:0 8px 32px rgba(0,0,0,.3);z-index:9999;transition:.3s;" class="">
+  <i class="bi bi-check-circle-fill" style="color:#28A745;"></i>
+  <span id="reporte-toast-msg">Reporte enviado.</span>
+</div>
+<style>
+  #reporte-toast.show { display: flex !important; animation: fadeInUp .3s ease; }
+</style>
+
+<button id="backToTop" title="Volver arriba" aria-label="Volver arriba">
+  <i class="bi bi-arrow-up"></i>
+</button>
+
+<script src="libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

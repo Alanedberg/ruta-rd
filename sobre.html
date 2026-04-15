@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sobre el Proyecto — RutaRD</title>
+  <meta name="description" content="Conoce el propósito, tecnologías y equipo detrás de RutaRD, la plataforma colaborativa de transporte público en República Dominicana." />
+
+  <link rel="stylesheet" href="libs/bootstrap/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="libs/bootstrap/css/bootstrap-icons.css" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+<!-- Loader -->
+<div id="page-loader">
+  <div class="loader-logo">Ruta<span>RD</span></div>
+  <div class="loader-spinner"></div>
+</div>
+
+<!-- ── Navbar ─────────────────────────────────────────── -->
+<nav class="navbar navbar-expand-lg" id="main-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">
+      <i class="bi bi-bus-front-fill brand-icon"></i>
+      Ruta<span class="brand-accent">RD</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Alternar menú">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-auto gap-1">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html"><i class="bi bi-house-fill"></i> Inicio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="rutas.html"><i class="bi bi-map-fill"></i> Rutas</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="sobre.html"><i class="bi bi-info-circle-fill"></i> Sobre el Proyecto</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- ── Hero ───────────────────────────────────────────── -->
+<section class="sobre-hero">
+  <div class="container">
+    <div class="hero-badge" style="margin:0 auto 1rem;">
+      <i class="bi bi-mortarboard-fill"></i> Proyecto Académico
+    </div>
+    <h1>Sobre <span style="color:#FFD166;">RutaRD</span></h1>
+    <p>
+      Una propuesta web para solucionar la falta de información centralizada del transporte público en República Dominicana.
+    </p>
+  </div>
+</section>
+
+<!-- ── Problema ───────────────────────────────────────── -->
+<section class="py-5 bg-white">
+  <div class="container">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-6">
+        <div class="section-tag mb-2"><i class="bi bi-exclamation-triangle-fill"></i> El Problema</div>
+        <h2 class="section-title mb-3">El transporte público en RD necesita transparencia</h2>
+        <p style="color:var(--text-gray);font-size:.98rem;line-height:1.7;">
+          En República Dominicana, millones de ciudadanos dependen del transporte público a diario: guaguas, carros públicos, motoconchos y el metro. Sin embargo, existe una marcada falta de información accesible sobre rutas, horarios y precios.
+        </p>
+        <ul class="d-flex flex-column gap-2 mt-3 ps-0" style="list-style:none;">
+          <li class="d-flex align-items-start gap-2">
+            <i class="bi bi-x-circle-fill" style="color:var(--metro);margin-top:.2rem;flex-shrink:0;"></i>
+            <span style="color:var(--text-gray);font-size:.92rem;">No existe un sistema centralizado de información de rutas</span>
+          </li>
+          <li class="d-flex align-items-start gap-2">
+            <i class="bi bi-x-circle-fill" style="color:var(--metro);margin-top:.2rem;flex-shrink:0;"></i>
+            <span style="color:var(--text-gray);font-size:.92rem;">Los horarios son imprecisos o completamente desconocidos</span>
+          </li>
+          <li class="d-flex align-items-start gap-2">
+            <i class="bi bi-x-circle-fill" style="color:var(--metro);margin-top:.2rem;flex-shrink:0;"></i>
+            <span style="color:var(--text-gray);font-size:.92rem;">Los usuarios dependen de "preguntar en la calle"</span>
+          </li>
+          <li class="d-flex align-items-start gap-2">
+            <i class="bi bi-x-circle-fill" style="color:var(--metro);margin-top:.2rem;flex-shrink:0;"></i>
+            <span style="color:var(--text-gray);font-size:.92rem;">El transporte informal no está documentado digitalmente</span>
+          </li>
+        </ul>
+      </div>
+      <div class="col-lg-6 text-center">
+        <div style="background:linear-gradient(135deg,#EBF3FF,#F4F7FB);border-radius:24px;padding:3rem 2rem;border:2px solid #DEE2E6;">
+          <i class="bi bi-map-fill" style="font-size:5rem;color:var(--primary);display:block;margin-bottom:1.5rem;"></i>
+          <div class="row g-3 text-center">
+            <div class="col-4">
+              <div style="font-size:1.8rem;font-weight:900;color:var(--primary);">12+</div>
+              <div style="font-size:.75rem;color:var(--text-gray);font-weight:600;">Rutas</div>
+            </div>
+            <div class="col-4">
+              <div style="font-size:1.8rem;font-weight:900;color:var(--secondary);">3</div>
+              <div style="font-size:.75rem;color:var(--text-gray);font-weight:600;">Transportes</div>
+            </div>
+            <div class="col-4">
+              <div style="font-size:1.8rem;font-weight:900;color:var(--accent);">RD</div>
+              <div style="font-size:.75rem;color:var(--text-gray);font-weight:600;">República Dom.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Solución / Funcionalidades ─────────────────────── -->
+<section class="py-5" style="background:var(--bg-light);">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag"><i class="bi bi-lightbulb-fill"></i> La Solución</div>
+      <h2 class="section-title">Funcionalidades de RutaRD</h2>
+      <p class="section-subtitle">Una plataforma simple, accesible y útil para todos</p>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-3 animate-fadeInUp animate-delay-1">
+        <div class="feature-card">
+          <div class="feature-icon blue"><i class="bi bi-search"></i></div>
+          <h5>Consulta de Rutas</h5>
+          <p>Busca rutas por origen y destino. Obtén información clara y rápida sobre cómo llegar de un punto a otro.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3 animate-fadeInUp animate-delay-2">
+        <div class="feature-card">
+          <div class="feature-icon green"><i class="bi bi-cash-coin"></i></div>
+          <h5>Precios Estimados</h5>
+          <p>Conoce el costo aproximado de cada ruta antes de salir. Sin sorpresas al abordar el transporte.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3 animate-fadeInUp animate-delay-3">
+        <div class="feature-card">
+          <div class="feature-icon red"><i class="bi bi-star-fill"></i></div>
+          <h5>Valoraciones</h5>
+          <p>Los usuarios califican las rutas. Sabe qué tan confiable es un recorrido antes de tomarlo.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3 animate-fadeInUp animate-delay-4">
+        <div class="feature-card">
+          <div class="feature-icon gold"><i class="bi bi-megaphone-fill"></i></div>
+          <h5>Reportes en Vivo</h5>
+          <p>La comunidad reporta tapones, desvíos o unidades llenas. Información en tiempo real sin GPS.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Tecnologías (sutil) ────────────────────────────── -->
+<section class="py-4 bg-white">
+  <div class="container">
+    <p class="text-center mb-3" style="font-size:.72rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--text-light);">Construido con</p>
+    <div class="d-flex justify-content-center align-items-center flex-wrap gap-4">
+      <i class="bi bi-filetype-html" title="HTML5"    style="font-size:1.9rem;color:#E44D26;opacity:.7;transition:.2s;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=.7"></i>
+      <i class="bi bi-filetype-css" title="CSS3"     style="font-size:1.9rem;color:#264DE4;opacity:.7;transition:.2s;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=.7"></i>
+      <i class="bi bi-filetype-js"  title="JavaScript" style="font-size:1.9rem;color:#c9a800;opacity:.7;transition:.2s;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=.7"></i>
+      <i class="bi bi-bootstrap-fill" title="Bootstrap" style="font-size:1.9rem;color:#7952B3;opacity:.7;transition:.2s;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=.7"></i>
+      <i class="bi bi-layout-text-sidebar-reverse" title="Bootstrap Icons" style="font-size:1.9rem;color:var(--primary);opacity:.7;transition:.2s;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=.7"></i>
+    </div>
+  </div>
+</section>
+
+<!-- ── Participantes ──────────────────────────────────── -->
+<section class="py-5" style="background:var(--bg-light);">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag"><i class="bi bi-people-fill"></i> Equipo</div>
+      <h2 class="section-title">Participantes del Proyecto</h2>
+      <p class="section-subtitle">Grupo I &mdash; Asignatura de Informática Gerencia</p>
+    </div>
+    <div class="row g-4 justify-content-center">
+      <div class="col-md-6 col-lg-4 animate-fadeInUp animate-delay-1">
+        <div class="info-card text-center" style="padding: 2.2rem 1.5rem; border-top: 5px solid var(--primary); transition: transform 0.3s ease;">
+          <div style="width: 72px; height: 72px; border-radius: 50%; background: linear-gradient(135deg, var(--primary), var(--primary-light)); display: flex; align-items: center; justify-content: center; margin: 0 auto 1.2rem; box-shadow: 0 5px 15px rgba(26, 111, 207, 0.2);">
+            <i class="bi bi-person-fill" style="font-size: 2.2rem; color: #fff;"></i>
+          </div>
+          <h5 class="justify-content-center" style="font-weight: 800; font-size: 1.1rem; color: var(--text-dark); margin-bottom: 0.8rem; display: flex; text-align: center;">Alan Edberg Cabrera Gómez</h5>
+          
+          <div class="mb-2">
+            <small class="text-muted d-block" style="font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">Carrera</small>
+            <span style="font-weight: 700; font-size: 0.95rem; color: var(--text-dark);">Ing. Software</span>
+          </div>
+          
+          <div class="mb-3">
+            <small class="text-muted d-block" style="font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">Matrícula</small>
+            <span class="badge" style="background: rgba(26, 111, 207, 0.1); color: var(--primary); border: 1px solid rgba(26, 111, 207, 0.2); font-size: 0.85rem; padding: 0.4rem 0.8rem;">100072385</span>
+          </div>
+
+          <div style="border-top: 1px dashed var(--border); padding-top: 1rem; margin-top: 0.5rem;">
+            <p style="font-size: 0.75rem; color: var(--text-gray); margin-bottom: 0;">
+              <strong style="color: var(--primary);">Grupo I</strong><br>
+              Informática Gerencia
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4 animate-fadeInUp animate-delay-2">
+        <div class="info-card text-center" style="padding: 2.2rem 1.5rem; border-top: 5px solid var(--secondary); transition: transform 0.3s ease;">
+          <div style="width: 72px; height: 72px; border-radius: 50%; background: linear-gradient(135deg, var(--secondary), #34c96a); display: flex; align-items: center; justify-content: center; margin: 0 auto 1.2rem; box-shadow: 0 5px 15px rgba(40, 167, 69, 0.2);">
+            <i class="bi bi-person-fill" style="font-size: 2.2rem; color: #fff;"></i>
+          </div>
+          <h5 class="justify-content-center" style="font-weight: 800; font-size: 1.1rem; color: var(--text-dark); margin-bottom: 0.8rem; display: flex; text-align: center;">Joan Manuel Fernández Gómez</h5>
+          
+          <div class="mb-2">
+            <small class="text-muted d-block" style="font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">Carrera</small>
+            <span style="font-weight: 700; font-size: 0.95rem; color: var(--text-dark);">Ing. Software</span>
+          </div>
+          
+          <div class="mb-3">
+            <small class="text-muted d-block" style="font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">Matrícula</small>
+            <span class="badge" style="background: rgba(40, 167, 69, 0.1); color: var(--secondary); border: 1px solid rgba(40, 167, 69, 0.2); font-size: 0.85rem; padding: 0.4rem 0.8rem;">100032614</span>
+          </div>
+
+          <div style="border-top: 1px dashed var(--border); padding-top: 1rem; margin-top: 0.5rem;">
+            <p style="font-size: 0.75rem; color: var(--text-gray); margin-bottom: 0;">
+              <strong style="color: var(--secondary);">Grupo I</strong><br>
+              Informática Gerencia
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4 animate-fadeInUp animate-delay-3">
+        <div class="info-card text-center" style="padding: 2.2rem 1.5rem; border-top: 5px solid #7b5ea7; transition: transform 0.3s ease;">
+          <div style="width: 72px; height: 72px; border-radius: 50%; background: linear-gradient(135deg, #7b5ea7, #a07fd4); display: flex; align-items: center; justify-content: center; margin: 0 auto 1.2rem; box-shadow: 0 5px 15px rgba(123, 94, 167, 0.2);">
+            <i class="bi bi-person-fill" style="font-size: 2.2rem; color: #fff;"></i>
+          </div>
+          <h5 class="justify-content-center" style="font-weight: 800; font-size: 1.1rem; color: var(--text-dark); margin-bottom: 0.8rem; display: flex; text-align: center;">Juan Jhordanny Hernández Durán</h5>
+          
+          <div class="mb-2">
+            <small class="text-muted d-block" style="font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">Carrera</small>
+            <span style="font-weight: 700; font-size: 0.95rem; color: var(--text-dark);">Ing. Software</span>
+          </div>
+          
+          <div class="mb-3">
+            <small class="text-muted d-block" style="font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">Matrícula</small>
+            <span class="badge" style="background: rgba(123, 94, 167, 0.1); color: #7b5ea7; border: 1px solid rgba(123, 94, 167, 0.2); font-size: 0.85rem; padding: 0.4rem 0.8rem;">100040513</span>
+          </div>
+
+          <div style="border-top: 1px dashed var(--border); padding-top: 1rem; margin-top: 0.5rem;">
+            <p style="font-size: 0.75rem; color: var(--text-gray); margin-bottom: 0;">
+              <strong style="color: #7b5ea7;">Grupo I</strong><br>
+              Informática Gerencia
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA final ───────────────────────────────────────── -->
+<section class="py-5" style="background:linear-gradient(135deg,#0d3b7a 0%,var(--primary) 100%);">
+  <div class="container text-center" style="color:#fff;">
+    <i class="bi bi-bus-front-fill" style="font-size:3rem;color:#FFD166;display:block;margin-bottom:1rem;"></i>
+    <h2 style="font-size:2rem;font-weight:900;margin-bottom:.8rem;">¿Listo para moverte con confianza?</h2>
+    <p style="color:rgba(255,255,255,.8);max-width:500px;margin:0 auto 1.5rem;">
+      Explora las rutas disponibles y descubre cómo RutaRD puede simplificarte el día.
+    </p>
+    <a href="rutas.html" class="btn-search" style="max-width:240px;margin:0 auto;" id="btn-explorar-rutas">
+      <i class="bi bi-map"></i> Explorar Rutas
+    </a>
+  </div>
+</section>
+
+<!-- ── Footer ─────────────────────────────────────────── -->
+<footer class="footer">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-lg-4">
+        <div class="footer-brand">Ruta<span>RD</span></div>
+        <p class="mt-2">Plataforma colaborativa de transporte público en República Dominicana.</p>
+      </div>
+      <div class="col-lg-2 col-6">
+        <h6>Navegación</h6>
+        <a href="index.html" class="footer-link"><i class="bi bi-house"></i> Inicio</a>
+        <a href="rutas.html" class="footer-link"><i class="bi bi-map"></i> Rutas</a>
+        <a href="sobre.html" class="footer-link"><i class="bi bi-info-circle"></i> Sobre el Proyecto</a>
+      </div>
+      <div class="col-lg-3 col-6">
+        <h6>Transporte</h6>
+        <a href="rutas.html" class="footer-link"><i class="bi bi-bus-front"></i> Guaguas</a>
+        <a href="rutas.html" class="footer-link"><i class="bi bi-train-front"></i> Metro</a>
+        <a href="rutas.html" class="footer-link"><i class="bi bi-car-front"></i> Carros Públicos</a>
+      </div>
+      <div class="col-lg-3">
+        <h6>Nota</h6>
+        <p style="font-size:.82rem;color:rgba(255,255,255,.5);">Datos colaborativos y aproximados. No son tarifas ni horarios oficiales.</p>
+      </div>
+    </div>
+    <hr class="footer-divider" />
+    <p class="footer-bottom">RutaRD © 2026 · Grupo I — Informática Gerencia · Todos los derechos reservados</p>
+  </div>
+</footer>
+
+<button id="backToTop" title="Volver arriba" aria-label="Volver arriba">
+  <i class="bi bi-arrow-up"></i>
+</button>
+
+<script src="libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

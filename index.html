@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RutaRD — Plataforma de Transporte Público en República Dominicana</title>
+  <meta name="description" content="RutaRD es la plataforma colaborativa de transporte público en República Dominicana. Consulta rutas, precios, horarios y más." />
+
+  <!-- Bootstrap local -->
+  <link rel="stylesheet" href="libs/bootstrap/css/bootstrap.min.css" />
+  <!-- Bootstrap Icons local -->
+  <link rel="stylesheet" href="libs/bootstrap/css/bootstrap-icons.css" />
+  <!-- Estilos propios -->
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+<!-- ── Loader ─────────────────────────────────────────── -->
+<div id="page-loader">
+  <div class="loader-logo">Ruta<span>RD</span></div>
+  <div class="loader-spinner"></div>
+</div>
+
+<!-- ── Navbar ─────────────────────────────────────────── -->
+<nav class="navbar navbar-expand-lg" id="main-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">
+      <i class="bi bi-bus-front-fill brand-icon"></i>
+      Ruta<span class="brand-accent">RD</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Alternar menú">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-auto gap-1">
+        <li class="nav-item">
+          <a class="nav-link active" href="index.html" id="nav-inicio">
+            <i class="bi bi-house-fill"></i> Inicio
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="rutas.html" id="nav-rutas">
+            <i class="bi bi-map-fill"></i> Rutas
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="sobre.html" id="nav-sobre">
+            <i class="bi bi-info-circle-fill"></i> Sobre el Proyecto
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- ── Hero ───────────────────────────────────────────── -->
+<section class="hero" id="hero">
+  <div class="container">
+    <div class="row align-items-center g-4">
+      <div class="col-lg-6 hero-content">
+        <div class="hero-badge">
+          <i class="bi bi-lightning-charge-fill"></i>
+          Plataforma Colaborativa · República Dominicana
+        </div>
+        <h1>
+          Encuentra tu ruta,<br>
+          muévete con <span class="highlight">confianza</span>
+        </h1>
+        <p class="lead">
+          Consulta rutas de guaguas, carros públicos y metro al instante.
+          Sin complicaciones, sin apps, desde cualquier teléfono.
+        </p>
+
+        <!-- Formulario de búsqueda -->
+        <form id="form-busqueda" class="hero-search-box" novalidate>
+          <div class="row g-3">
+            <div class="col-md-6">
+              <label for="input-origen">
+                <i class="bi bi-geo-alt-fill" style="color:#FFD166;"></i>
+                Punto de salida
+              </label>
+              <div class="input-icon-wrap">
+                <i class="bi bi-circle-fill" style="font-size:0.5rem;color:var(--secondary);"></i>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="input-origen"
+                  placeholder="Ej: Los Mina, Santiago..."
+                  autocomplete="off"
+                />
+              </div>
+            </div>
+            <div class="col-md-6">
+              <label for="input-destino">
+                <i class="bi bi-geo-fill" style="color:#FFD166;"></i>
+                Destino
+              </label>
+              <div class="input-icon-wrap">
+                <i class="bi bi-geo-alt-fill" style="font-size:0.85rem;color:var(--metro);"></i>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="input-destino"
+                  placeholder="Ej: Zona Colonial, Piantini..."
+                  autocomplete="off"
+                />
+              </div>
+            </div>
+          </div>
+          <button type="submit" class="btn-search" id="btn-buscar-hero">
+            <i class="bi bi-search"></i> Buscar Ruta
+          </button>
+        </form>
+
+        <!-- Stats -->
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <span class="number" data-count="12" data-suffix="+">0+</span>
+            <span class="label">Rutas activas</span>
+          </div>
+          <div class="hero-stat">
+            <span class="number" data-count="3">0</span>
+            <span class="label">Tipos de transporte</span>
+          </div>
+          <div class="hero-stat">
+            <span class="number" data-count="100" data-suffix="%">0%</span>
+            <span class="label">Información gratis</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Gráfico decorativo -->
+      <div class="col-lg-6 d-none d-lg-flex">
+        <div class="hero-graphic w-100" style="flex-direction:column;gap:1rem;">
+          <i class="bi bi-bus-front-fill bus-icon"></i>
+          <div class="d-flex justify-content-center gap-3">
+            <div style="background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:12px;padding:.8rem 1.5rem;text-align:center;backdrop-filter:blur(10px);">
+              <i class="bi bi-train-front-fill" style="font-size:1.5rem;color:#FFD166;display:block;margin-bottom:.3rem;"></i>
+              <small style="color:rgba(255,255,255,.8);font-size:.8rem;font-weight:600;">Metro</small>
+            </div>
+            <div style="background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:12px;padding:.8rem 1.5rem;text-align:center;backdrop-filter:blur(10px);">
+              <i class="bi bi-car-front-fill" style="font-size:1.5rem;color:#90EE90;display:block;margin-bottom:.3rem;"></i>
+              <small style="color:rgba(255,255,255,.8);font-size:.8rem;font-weight:600;">Carro Público</small>
+            </div>
+            <div style="background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:12px;padding:.8rem 1.5rem;text-align:center;backdrop-filter:blur(10px);">
+              <i class="bi bi-bus-front-fill" style="font-size:1.5rem;color:#87CEEB;display:block;margin-bottom:.3rem;"></i>
+              <small style="color:rgba(255,255,255,.8);font-size:.8rem;font-weight:600;">Guagua</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Tipos de transporte ─────────────────────────────── -->
+<section class="py-5 bg-white" id="tipos">
+  <div class="container">
+    <div class="row g-4 text-center">
+      <div class="col-md-4 animate-fadeInUp animate-delay-1">
+        <div class="d-flex flex-column align-items-center gap-2 p-4" style="border-radius:16px;border:2px solid #EBF3FF;background:#F8FBFF;transition:.3s;">
+          <div class="transport-icon guagua" style="width:60px;height:60px;font-size:1.8rem;">
+            <i class="bi bi-bus-front-fill"></i>
+          </div>
+          <h5 style="font-weight:800;color:#1A1A2E;">Guagua</h5>
+          <p style="color:#6C757D;font-size:.87rem;margin:0;">
+            El transporte urbano e interurbano más popular del país. Precios económicos y alta frecuencia.
+          </p>
+        </div>
+      </div>
+      <div class="col-md-4 animate-fadeInUp animate-delay-2">
+        <div class="d-flex flex-column align-items-center gap-2 p-4" style="border-radius:16px;border:2px solid #FFECEC;background:#FFF8F8;transition:.3s;">
+          <div class="transport-icon metro" style="width:60px;height:60px;font-size:1.8rem;">
+            <i class="bi bi-train-front-fill"></i>
+          </div>
+          <h5 style="font-weight:800;color:#1A1A2E;">Metro</h5>
+          <p style="color:#6C757D;font-size:.87rem;margin:0;">
+            Sistema moderno y puntual en Santo Domingo. Rápido, seguro, sin tapones.
+          </p>
+        </div>
+      </div>
+      <div class="col-md-4 animate-fadeInUp animate-delay-3">
+        <div class="d-flex flex-column align-items-center gap-2 p-4" style="border-radius:16px;border:2px solid #EAFAF1;background:#F8FFF9;transition:.3s;">
+          <div class="transport-icon carro_publico" style="width:60px;height:60px;font-size:1.8rem;">
+            <i class="bi bi-car-front-fill"></i>
+          </div>
+          <h5 style="font-weight:800;color:#1A1A2E;">Carro Público</h5>
+          <p style="color:#6C757D;font-size:.87rem;margin:0;">
+            Rutas locales y de barrio. Sale frecuente, llega a zonas donde no llega la guagua.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Rutas Populares ─────────────────────────────────── -->
+<section class="py-5" id="populares" style="background:var(--bg-light);">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag"><i class="bi bi-fire"></i> Más consultadas</div>
+      <h2 class="section-title">Rutas Populares</h2>
+      <p class="section-subtitle">Las rutas más buscadas por la comunidad RutaRD</p>
+    </div>
+    <div class="row g-4" id="popular-container">
+      <!-- Cards generadas por JS -->
+    </div>
+    <div class="text-center mt-4">
+      <a href="rutas.html" class="btn-ver" style="display:inline-flex;padding:.9rem 2.5rem;font-size:1rem;" id="btn-ver-todas">
+        <i class="bi bi-grid-fill"></i> Ver todas las rutas
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA ─────────────────────────────────────────────── -->
+<section class="py-5" style="background:linear-gradient(135deg,#0d3b7a 0%,var(--primary) 100%);">
+  <div class="container text-center" style="color:#fff;">
+    <i class="bi bi-people-fill" style="font-size:2.5rem;color:#FFD166;display:block;margin-bottom:1rem;"></i>
+    <h2 style="font-size:2rem;font-weight:900;margin-bottom:.8rem;">¿Conoces una ruta que no está aquí?</h2>
+    <p style="color:rgba(255,255,255,.8);font-size:1.05rem;max-width:520px;margin:0 auto 1.5rem;">
+      RutaRD es una plataforma colaborativa. Tu conocimiento ayuda a miles de dominicanos a moverse mejor.
+    </p>
+    <a href="rutas.html" class="btn-search" style="max-width:260px;margin:0 auto;" id="btn-explorar-cta">
+      <i class="bi bi-map"></i> Explorar rutas
+    </a>
+  </div>
+</section>
+
+<!-- ── Footer ─────────────────────────────────────────── -->
+<footer class="footer">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-lg-4">
+        <div class="footer-brand">Ruta<span>RD</span></div>
+        <p class="mt-2">
+          Plataforma colaborativa de transporte público en República Dominicana. Información aproximada, útil y gratuita para todos.
+        </p>
+      </div>
+      <div class="col-lg-2 col-6">
+        <h6>Navegación</h6>
+        <a href="index.html" class="footer-link" id="footer-inicio"><i class="bi bi-house"></i> Inicio</a>
+        <a href="rutas.html" class="footer-link" id="footer-rutas"><i class="bi bi-map"></i> Rutas</a>
+        <a href="sobre.html" class="footer-link" id="footer-sobre"><i class="bi bi-info-circle"></i> Sobre el Proyecto</a>
+      </div>
+      <div class="col-lg-3 col-6">
+        <h6>Transporte</h6>
+        <a href="rutas.html?tipo=guagua" class="footer-link"><i class="bi bi-bus-front"></i> Guaguas</a>
+        <a href="rutas.html?tipo=metro" class="footer-link"><i class="bi bi-train-front"></i> Metro</a>
+        <a href="rutas.html?tipo=carro_publico" class="footer-link"><i class="bi bi-car-front"></i> Carros Públicos</a>
+      </div>
+      <div class="col-lg-3">
+        <h6>Información</h6>
+        <p style="font-size:.82rem;color:rgba(255,255,255,.5);">
+          Los datos presentados son aproximados y de carácter colaborativo. No representan horarios ni tarifas oficiales.
+        </p>
+        <p style="font-size:.82rem;color:rgba(255,255,255,.5);margin-top:.5rem;">
+          <i class="bi bi-geo-alt-fill" style="color:#FFD166;"></i> República Dominicana
+        </p>
+      </div>
+    </div>
+    <hr class="footer-divider" />
+    <p class="footer-bottom">RutaRD © 2026 · Grupo I — Informática Gerencia · Todos los derechos reservados</p>
+  </div>
+</footer>
+
+<!-- ── Botón volver arriba ─────────────────────────────── -->
+<button id="backToTop" title="Volver arriba" aria-label="Volver arriba">
+  <i class="bi bi-arrow-up"></i>
+</button>
+
+<!-- Scripts -->
+<script src="libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
